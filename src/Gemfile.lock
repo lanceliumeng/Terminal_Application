@@ -36,6 +36,7 @@ PLATFORMS
 DEPENDENCIES
   colorize (~> 0.8.1)
   rspec (~> 3.10)
+  tty-color (~> 0.6.0)
   tty-prompt (~> 0.23.1)
 
 BUNDLED WITH
