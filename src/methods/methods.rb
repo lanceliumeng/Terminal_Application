@@ -10,5 +10,6 @@ end
 
 # => For Exist client register
 def print_menu_01
- # put choice[0] in here
+  # put choice[0] in here
+  
 end
