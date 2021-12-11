@@ -1,6 +1,5 @@
 # => for apps welcome font setting
 require 'tty-font'
-
 def welcome_note
     font = TTY::Font.new(:standard)
     pastel = Pastel.new

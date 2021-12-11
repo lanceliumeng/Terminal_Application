@@ -5,7 +5,7 @@ require 'tty-prompt'
 # require 'tty-progressbar'
 
 #begin  app welcome function
-require './methods/welcome.rb'
+require './methods/methods.rb'
 welcome_note
 #end
 
@@ -27,5 +27,6 @@ when choices[2]
 else
     puts "Please choose 1, 2, or 3, Thank you :)".colorize(:light_red)
 end
+
 
 
