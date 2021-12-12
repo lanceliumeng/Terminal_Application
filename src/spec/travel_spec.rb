@@ -1,8 +1,9 @@
 require './classes/itinerary_item.rb'
 require './classes/itinerary.rb'
 require './classes/order.rb'
+require './classes/travel_plan.rb'
 # require '../classes/user.rb'
-# require './classes/travel_plan.rb'
+
 
 #test for class ItineraryItem
 describe ItineraryItem do
@@ -75,3 +76,33 @@ describe Order do
 
 end
 
+
+#test for class TravelPlan
+describe TravelPlan do
+    it "should create a travel plan" do
+        name = "My Travel Plan"
+        travel_plans = {}
+        travel = TravelPlan.new(name,travel_plans)
+        expect(travel.name).to eq(name)
+    end
+
+    it "should create an travel plan with a itinerary" do
+        name = "My Travel Plan"
+        travel_plans = {golf_tour:600,wine_tour:300}
+        travel = TravelPlan.new(name,travel_plans)
+        expect(travel.itinerary.get_items.count).to eq(1)
+    end
+
+    it "should add a travel item to order" do
+        name = "My Travel Plan"
+        travel_plans = {golf_tour:600,wine_tour:300}
+        travel = TravelPlan.new(name,travel_plans)
+        travel_item = "golf_tour"
+        qty = 2
+        travel.add_into_order(travel_item,qty)
+        expect(travel.get_order().get_items().count).to eq(1)
+    end
+
+
+
+end
