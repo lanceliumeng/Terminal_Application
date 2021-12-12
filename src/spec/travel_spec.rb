@@ -2,7 +2,7 @@ require './classes/itinerary_item.rb'
 require './classes/itinerary.rb'
 require './classes/order.rb'
 # require '../classes/user.rb'
-# require '../classes/travel.rb'
+# require './classes/travel_plan.rb'
 
 #test for class ItineraryItem
 describe ItineraryItem do
