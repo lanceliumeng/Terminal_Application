@@ -1,9 +1,8 @@
 class ItineraryItem
-    attr_reader :name,:details,:price
+    attr_reader :name,:price
 
-    def initialize(name,details,price)
+    def initialize(name,price)
         @name = name
-        @details = details
         @price = price
     end
 

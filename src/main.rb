@@ -9,17 +9,8 @@ require './methods/methods.rb'
 welcome_note
 #end
 
-itinerary_01 = {
-    name:"Golf Tour",
-    details:"5 Days,18 holes, Barnbougle Dunes, Lost Farm, LST",
-    price: "$600/pp"
-}
-itinerary_02 = {
-    name:"Golf Tour",
-    details:"3 Days,18 holes x 3, Barnbougle Dunes, Lost Farm, LST",
-    price: "$600/pp"
-}
-itineraries = [itinerary_01, itinerary_02]
+require './data-base/lookup.rb'
+
 
 
 #Basic App Menu System
@@ -58,7 +49,7 @@ while true
   case option_answer
   when options[0]
     puts "Here is our itinerarys"
-    puts "#{itineraries}"
+    puts "#{iti_check}"
   when options[1]
     puts "here is your current Order details"
   when options[2]

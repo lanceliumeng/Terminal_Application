@@ -6,8 +6,8 @@ class Itinerary
         @itinerary_items = []
     end
     
-    def add_item(name,details,price)
-        itinerary_item = ItineraryItem.new(name,details,price)
+    def add_item(name,price)
+        itinerary_item = ItineraryItem.new(name,price)
         @itinerary_items << itinerary_item
     end
 
@@ -21,4 +21,9 @@ class Itinerary
     def get_items
         return @itinerary_items
     end
+
+    def display_iti
+        puts "#{@itinerary_items}"
+    end
 end
+

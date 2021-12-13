@@ -9,25 +9,15 @@ require './classes/travel_plan.rb'
 describe ItineraryItem do
     it "should return the itinerary name " do
         name = "golf tour"
-        details = "5 Days,18 holes, Barnbougle Dunes, Lost Farm, LST golf clubs"
         price = 600.00
-        itinerary_item = ItineraryItem.new(name,details,price)
+        itinerary_item = ItineraryItem.new(name,price)
         expect(itinerary_item.name).to eq(name)
-    end
-
-    it "should return the itinerary details " do
-        name = "golf tour"
-        details = "5 Days,18 holes, Barnbougle Dunes, Lost Farm, LST golf clubs"
-        price = 600.00
-        itinerary_item = ItineraryItem.new(name,details,price)
-        expect(itinerary_item.details).to eq(details)
     end
 
     it "should return the itinerary price " do
         name = "golf tour"
-        details = "5 Days,18 holes, Barnbougle Dunes, Lost Farm, LST golf clubs"
         price = 600.00
-        itinerary_item = ItineraryItem.new(name,details,price)
+        itinerary_item = ItineraryItem.new(name,price)
         expect(itinerary_item.price).to eq(price)
     end
 
@@ -37,19 +27,17 @@ end
 describe Itinerary do
     it "should be able to check the price of itinerary item" do
         name = "golf tour"
-        details = "5 Days,18 holes, Barnbougle Dunes, Lost Farm, LST golf clubs"
         price = 600.00
         itinerary = Itinerary.new
-        itinerary.add_item(name,details,price)
+        itinerary.add_item(name,price)
         expect(itinerary.get_price(name)).to eq(price)
     end
 
     it "should be able to add an item" do
         name = "golf tour"
-        details = "5 Days,18 holes, Barnbougle Dunes, Lost Farm, LST golf clubs"
         price = 600.00
         itinerary = Itinerary.new
-        itinerary.add_item(name,details,price)
+        itinerary.add_item(name,price)
         expect(itinerary.get_items().count).to be(1)
     end
 end
@@ -90,7 +78,7 @@ describe TravelPlan do
         name = "My Travel Plan"
         travel_plans = {golf_tour:600,wine_tour:300}
         travel = TravelPlan.new(name,travel_plans)
-        expect(travel.itinerary.get_items.count).to eq(1)
+        expect(travel.itinerary.get_items.length).to eq(2)
     end
 
     it "should add a travel item to order" do
