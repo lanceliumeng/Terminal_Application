@@ -26,4 +26,17 @@ class TravelPlan
         @order
     end
 
+    def notify  
+        puts "Here is #{@name} :)"
+    end
+
+    def print_itinerary
+        @itinerary.display_iti
+    end
 end
+
+name = "Your Current Travel Plan"
+travel_plans = {golf_tour:600,wine_tour:300}
+travel = TravelPlan.new(name,travel_plans)
+travel.notify
+travel.print_itinerary

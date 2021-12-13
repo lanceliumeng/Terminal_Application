@@ -6,6 +6,9 @@ class ItineraryItem
         @price = price
     end
 
+    def to_s 
+      "#{@name} " +  " "*(25-@name.length)+"     ========> $#{@price}"
+    end
 
 end
 

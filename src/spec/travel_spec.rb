@@ -68,21 +68,21 @@ end
 #test for class TravelPlan
 describe TravelPlan do
     it "should create a travel plan" do
-        name = "My Travel Plan"
+        name = "Your Current Travel Plan"
         travel_plans = {}
         travel = TravelPlan.new(name,travel_plans)
         expect(travel.name).to eq(name)
     end
 
     it "should create an travel plan with a itinerary" do
-        name = "My Travel Plan"
+        name = "Your Current Travel Plan"
         travel_plans = {golf_tour:600,wine_tour:300}
         travel = TravelPlan.new(name,travel_plans)
         expect(travel.itinerary.get_items.length).to eq(2)
     end
 
     it "should add a travel item to order" do
-        name = "My Travel Plan"
+        name = "Your Current Travel Plan"
         travel_plans = {golf_tour:600,wine_tour:300}
         travel = TravelPlan.new(name,travel_plans)
         travel_item = "golf_tour"
@@ -91,6 +91,18 @@ describe TravelPlan do
         expect(travel.get_order().get_items().count).to eq(1)
     end
 
+    it "should has a method to display welcome note" do
+        name = "Your Current Travel Plan"
+        travel_plans = {golf_tour:600,wine_tour:300}
+        travel = TravelPlan.new(name,travel_plans)
+        expect(travel.notify).to eq(nil)
+    end
 
+    it "should define a method which can print itinerary" do
+        name = "Your Current Travel Plan"
+        travel_plans = {golf_tour:600,wine_tour:300}
+        travel = TravelPlan.new(name,travel_plans)
+        expect(travel.print_itinerary).to eq(nil)
+    end
 
 end

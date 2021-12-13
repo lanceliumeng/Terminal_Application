@@ -23,7 +23,20 @@ class Itinerary
     end
 
     def display_iti
-        puts "#{@itinerary_items}"
+        puts "Itinerary"
+        puts "*********"
+        @itinerary_items.each do |item|
+        puts item
+        end
+        return nil
     end
 end
 
+
+# iti = Itinerary.new
+# iti.add_item("golf_tour", 600.00)
+# iti.add_item("wine_tour",400.00)
+# iti.add_item("HBA_day_tour",1200.00)
+# iti.add_item("WineGlassBay_day_tour",200.00)
+
+# iti.display_iti
