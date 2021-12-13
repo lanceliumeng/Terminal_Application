@@ -22,6 +22,14 @@ class TravelPlan
         @order.add_item(travel_item,qty)
     end
 
+    def total_order
+        total_price = 0
+        @order.get_items.each do |item,qty|
+            total_price += (@itinerary.get_price(item) * qty)
+        end
+       total_price
+    end
+
     def get_order
         @order
     end
@@ -33,10 +41,20 @@ class TravelPlan
     def print_itinerary
         @itinerary.display_iti
     end
+
+    def print_order
+        if @order
+            @order.display
+            puts "Your current order total price is " 
+        else
+            "Thanks for you choosing our app :)"
+        end
+    end
+
 end
 
-name = "Your Current Travel Plan"
-travel_plans = {golf_tour:600,wine_tour:300}
-travel = TravelPlan.new(name,travel_plans)
-travel.notify
-travel.print_itinerary
+# name = "Your Current Travel Plan"
+# travel_plans = {golf_tour:600,wine_tour:300}
+# travel = TravelPlan.new(name,travel_plans)
+# travel.notify
+# travel.print_itinerary

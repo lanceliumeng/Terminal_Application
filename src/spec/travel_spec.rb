@@ -105,4 +105,16 @@ describe TravelPlan do
         expect(travel.print_itinerary).to eq(nil)
     end
 
+    it "should add current order in total" do
+        name = "Your Current Travel Plan"
+        travel_plans = {"golf_tour" => 600, "wine_tour" => 300}
+        travel = TravelPlan.new(name,travel_plans)
+        travel_item = "golf_tour"
+        qty = 2
+        travel.add_into_order(travel_item,qty)
+        travel_item = "wine_tour"
+        qty = 2
+        travel.add_into_order(travel_item,qty)
+        expect(travel.total_order).to be(1800)
+    end
 end

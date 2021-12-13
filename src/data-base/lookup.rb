@@ -5,7 +5,7 @@ def iti_check
     details:"18 holes, Barnbougle Dunes, Lost Farm, LST",
     price: "$600/pp"
 }
-itinerary_02 = {
+    itinerary_02 = {
     name:"Golf Tour 3 days",
     details:"18 holes x 3, Barnbougle Dunes, Lost Farm, LST",
     price: "$600/pp"
