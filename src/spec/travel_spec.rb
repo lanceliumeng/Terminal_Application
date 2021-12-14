@@ -40,6 +40,22 @@ describe Itinerary do
         itinerary.add_item(name,price)
         expect(itinerary.get_items().count).to be(1)
     end
+
+    it "should return the item name for a valid item" do
+        name = "golf tour"
+        price = 600.00
+        itinerary = Itinerary.new
+        itinerary.add_item(name,price)
+        expect(itinerary.validate_item(name)).to eq(name)
+    end
+
+    it "should return nil for a invalid item" do
+        name = "golf tour"
+        price = 600.00
+        itinerary = Itinerary.new
+        itinerary.add_item(name,price)
+        expect(itinerary.validate_item("wine_tour")).to eq(nil)
+    end
 end
 
 #test for class Order

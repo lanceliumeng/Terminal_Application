@@ -40,15 +40,16 @@ class TravelPlan
 
     def print_itinerary
         @itinerary.display_iti
-    end
+    end 
 
     def print_order
         if @order
             @order.display
-            puts "Your current order total price is " 
+            puts "Your current order price is: $%.2f" % total_order
         else
             "Thanks for you choosing our app :)"
         end
+        puts "===================================="
     end
 
 end

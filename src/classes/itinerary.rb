@@ -30,6 +30,15 @@ class Itinerary
         end
         return nil
     end
+
+    def validate_item(name)
+        @itinerary_items.each do |itinerary_item|
+            if itinerary_item.name == name
+                return name
+            end
+        end
+        return nil
+    end
 end
 
 

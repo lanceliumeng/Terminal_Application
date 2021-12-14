@@ -14,7 +14,26 @@ require './classes/travel_plan.rb'
 itinerary = {"golf_tour" => 600, "wine_tour" => 300,"HBA_day_tour" => 200}
 travel_plan = TravelPlan.new("Your travel plan", itinerary)
 travel_plan.notify
-travel_plan.print_itinerary
+
+loop do
+  travel_plan.print_itinerary
+  puts "when you finish your order, please type done"
+  input = gets.chomp
+  if input == 'done'
+    break
+  end
+
+  item = travel_plan.itinerary.validate_item(input)
+  if item
+    puts "Please type your order quantity :)"
+    quantity = gets.chomp.to_i
+    if quantity > 0
+      travel_plan.add_into_order(item,quantity)
+    end
+  end
+end
+
+travel_plan.print_order
 
 # #Basic App Menu System
 # while true
