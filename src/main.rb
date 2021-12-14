@@ -9,6 +9,10 @@ require 'tty-prompt'
 # welcome_note
 #end
 
+# => terminal command flag function
+require "./methods/methods.rb"
+file_flag
+
 # require for => TravelPlan class
 require './classes/travel_plan.rb' 
 
@@ -45,6 +49,10 @@ travel_plan.print_order
 # => print itinerary brochure for users
 require "./methods/methods.rb"
 brochure
+
+
+
+
 
 # #Basic App Menu System
 # while true

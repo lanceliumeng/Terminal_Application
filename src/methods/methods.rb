@@ -24,3 +24,22 @@ def brochure
       puts "#{each_line}".colorize(:light_yellow)
   end
 end
+
+# => terminal command flag function
+def file_flag 
+  if ARGV.length > 0
+    flag, *rest = ARGV
+    ARGV.clear 
+    case flag 
+    when "-help"
+      puts "Please read the below document"
+      exit
+    when "-info"
+      puts "This terminal application needs ruby #{RUBY_VERSION}"
+      exit
+    else 
+      puts "I can not find this argument, please find more information in README file"
+      exit
+    end
+  end
+end
