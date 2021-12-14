@@ -45,11 +45,12 @@ class TravelPlan
     def print_order
         if @order
             @order.display
-            puts "Your current order price is: $%.2f" % total_order
+            puts "Your current order price is: $%.2f/pp in total" % total_order
         else
             "Thanks for you choosing our app :)"
         end
-        puts "===================================="
+        puts "============================================="
+        puts "Thanks for your order, have a lovely day :)"
     end
 
 end

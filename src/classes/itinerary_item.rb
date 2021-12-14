@@ -7,7 +7,7 @@ class ItineraryItem
     end
 
     def to_s 
-      "#{@name} " +  " "*(25-@name.length)+"     ========> $#{@price}"
+      "#{@name} " +  " "*(25-@name.length)+"     ========> $#{@price}/pp"
     end
 
 end

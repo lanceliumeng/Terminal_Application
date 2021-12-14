@@ -1,0 +1,19 @@
+Itinerary_01 
+    Name: golf tour 01
+    Details: 18 holes for 5 days, Barnbougle Dunes, Lost Farm, LST golf clubs
+    Price: $600/pp
+
+Itinerary_02
+    Name: golf tour 02
+    Details: 18 holes for 3 days, Barnbougle Dunes, Lost Farm
+    Price: $400/pp
+
+Itinerary_03
+    Name: LST wine tour
+    Details: Tamar Valley 6 popular wineries, includs cellar door wine tastings and lunch platter
+    Price: $220/pp
+
+Itinerary_04
+    Name: HBA day tour
+    Details: Tasmanian devils at Bonorong Wildlife Sanctuary, reach the summit Mt Wellington and Tasmania's best waterfalls at Mt Field National Park
+    Price: $160/pp

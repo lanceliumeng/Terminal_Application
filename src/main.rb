@@ -9,10 +9,17 @@ require 'tty-prompt'
 # welcome_note
 #end
 
-require './data-base/lookup.rb'
-require './classes/travel_plan.rb'
-itinerary = {"golf_tour" => 600, "wine_tour" => 300,"HBA_day_tour" => 200}
-travel_plan = TravelPlan.new("Your travel plan", itinerary)
+# require for => TravelPlan class
+require './classes/travel_plan.rb' 
+
+# Ojbect for => TravelPlan class
+itinerary_intro = {
+  "golf tour 01" => 600, 
+  "golf tour 02" => 400, 
+  "LST wine tour" => 220,
+  "HBA day tour" => 160,
+}
+travel_plan = TravelPlan.new("Your travel plan", itinerary_intro)
 travel_plan.notify
 
 loop do
@@ -34,6 +41,10 @@ loop do
 end
 
 travel_plan.print_order
+
+# => print itinerary brochure for users
+require "./methods/methods.rb"
+brochure
 
 # #Basic App Menu System
 # while true

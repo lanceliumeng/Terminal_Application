@@ -1,5 +1,7 @@
-# => for apps welcome font setting
 require 'tty-font'
+require 'colorize' 
+
+# => for apps welcome font setting
 def welcome_note
     font = TTY::Font.new(:standard)
     pastel = Pastel.new
@@ -12,4 +14,13 @@ end
 def print_menu_01
   # put choice[0] in here
   
+end
+
+
+# => itinerary lookup method 
+def brochure
+  File.foreach("./data-base/brochure.txt") do |each_line|
+      # each_line.strip!
+      puts "#{each_line}".colorize(:light_yellow)
+  end
 end
