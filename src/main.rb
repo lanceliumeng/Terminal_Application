@@ -1,12 +1,14 @@
+# => Ruby Gems
 require 'colorize'
 # require 'tty-color'
 require 'tty-prompt'
 # require 'tty-spinner'
 # require 'tty-progressbar'
+
+# => methods
 require "./methods/methods.rb"
 
 #begin  app welcome function
-# require './methods/methods.rb'
 # welcome_note
 #end
 

@@ -45,6 +45,11 @@ class TravelPlan
     def print_order
         if @order
             @order.display
+            bar = TTY::ProgressBar.new("Waiting ... [:bar]", total:30)
+            30.times do
+                sleep(0.1)
+                bar.advance(1)
+            end
             puts "Your current order price is: $%.2f/pp in total" % total_order
         else
             "Thanks for you choosing our app :)"
@@ -55,8 +60,8 @@ class TravelPlan
 
 end
 
-# name = "Your Current Travel Plan"
-# travel_plans = {golf_tour:600,wine_tour:300}
-# travel = TravelPlan.new(name,travel_plans)
-# travel.notify
-# travel.print_itinerary
+name = "Your Current Travel Plan"
+travel_plans = {golf_tour:600,wine_tour:300}
+travel = TravelPlan.new(name,travel_plans)
+travel.notify
+travel.print_itinerary
