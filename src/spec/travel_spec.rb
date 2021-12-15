@@ -2,7 +2,7 @@ require './classes/itinerary_item.rb'
 require './classes/itinerary.rb'
 require './classes/order.rb'
 require './classes/travel_plan.rb'
-# require '../classes/user.rb'
+require './classes/users.rb'
 
 
 #test for class ItineraryItem
@@ -133,4 +133,21 @@ describe TravelPlan do
         travel.add_into_order(travel_item,qty)
         expect(travel.total_order).to be(1800)
     end
+end
+
+#test for class Users
+describe Users do
+
+    it "can check if input usersname in database" do
+        users_details = {"lance" => 0000}
+        input_name = "lance"
+        expect(users_details.key? input_name).to eq(true)
+    end
+
+     it "can check and notify users if password is invalid" do
+        users_details = {"lance" => 0000}
+        input_name = "lance"
+        input_password = 1234
+        expect(input_password == users_details[input_name]).to eq(false)
+     end
 end

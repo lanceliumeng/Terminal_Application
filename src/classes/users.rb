@@ -33,12 +33,15 @@
 # # puts total_users
 
 
+
 class Users 
 
-    @@users_details = {
-        'lance' => 1234,
-        'sara' => 5678,
-        'thomas' => 6356,
+    
+
+  @@users_details = {
+    "lance" => 1234,
+    "sara" => 5678,
+    "thomas" => 6356
 }
 
 def username_check 
@@ -62,11 +65,12 @@ def username_check
 
     else
         puts "Your username is not in our database, please type it again or register your username :)"
+        exit
     end
 
 end
-    
-end
 
+
+end
 # current_user = Users.new
 # current_user.username_check

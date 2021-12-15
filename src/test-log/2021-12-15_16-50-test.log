@@ -1,0 +1,35 @@
+
+ItineraryItem
+  should return the itinerary name
+  should return the itinerary price
+
+Itinerary
+  should be able to check the price of itinerary item
+  should be able to add an item
+  should return the item name for a valid item
+  should return nil for a invalid item
+
+Order
+  should add an itinerary item to client order
+  should update order qty if client add additional items
+
+TravelPlan
+  should create a travel plan
+  should create an travel plan with a itinerary
+  should add a travel item to order
+Here is Your Current Travel Plan :)
+  should has a method to display welcome note
+Itinerary
+*********
+golf_tour                      ========> $600/pp
+wine_tour                      ========> $300/pp
+  should define a method which can print itinerary
+  should add current order in total
+
+Users
+  can check if input usersname in database
+  can check and notify users if password is invalid
+
+Finished in 0.00256 seconds (files took 0.09137 seconds to load)
+16 examples, 0 failures
+
