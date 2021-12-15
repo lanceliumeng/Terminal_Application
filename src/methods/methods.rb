@@ -43,3 +43,33 @@ def file_flag
     end
   end
 end
+
+# => for new users register  
+def register
+  begin
+      puts "Please type username"
+      username_input = gets.chomp
+      if username_input.empty? || username_input.match(/\s+/)
+          raise "username cannot be empty or including blank space, please try again :)"
+      end
+  rescue => e
+      puts e.message
+      retry
+  end
+
+  begin
+      puts "Please type password"
+      password_input = gets.chomp
+      if password_input.empty? || password_input.match(/\s+/)
+          raise "password cannot be empty or including blank space, please try again :)"
+      end
+  rescue => e
+      puts e.message
+      retry
+  end
+
+  puts "Thanks for your register :)"
+  puts "Your username is: #{username_input}"
+  puts "Your password is: #{password_input}"
+
+end

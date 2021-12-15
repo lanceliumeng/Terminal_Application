@@ -2,7 +2,7 @@ require './classes/itinerary_item.rb'
 require './classes/itinerary.rb'
 require './classes/order.rb'
 require './classes/travel_plan.rb'
-require './classes/users.rb'
+require './classes/exist_users.rb'
 
 
 #test for class ItineraryItem
@@ -136,7 +136,7 @@ describe TravelPlan do
 end
 
 #test for class Users
-describe Users do
+describe ExistUsers do
 
     it "can check if input usersname in database" do
         users_details = {"lance" => 0000}
@@ -150,4 +150,5 @@ describe Users do
         input_password = 1234
         expect(input_password == users_details[input_name]).to eq(false)
      end
+     
 end
