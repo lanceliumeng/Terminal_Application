@@ -5,6 +5,7 @@ require 'tty-color'
 require 'tty-prompt'
 require 'tty-spinner'
 require 'tty-progressbar'
+require 'pastel'
 
 # require for => TravelPlan class
 require './classes/travel_plan.rb' 
@@ -55,6 +56,7 @@ def file_flag
       puts "For more infomation,please find README file"
       exit
     when "-info"
+      puts "This application is BETA version: 1.0"
       puts "This terminal application needs ruby #{RUBY_VERSION}"
       puts "This app also need rubu gems : colorize, tty-color, tty-prompt, tty-spinner and tty-progressbar"
       exit
@@ -126,6 +128,7 @@ def options
 travel_plan = TravelPlan.new("Current Travel Plan", itinerary_intro)
 travel_plan.notify
 
+#loop part begin
 loop do
   travel_plan.print_itinerary
   puts "when you finish your order, please type done".colorize(:light_yellow)
@@ -143,6 +146,7 @@ loop do
     end
   end
 end
+#loop part end
 
 travel_plan.print_order
     when options[-1]

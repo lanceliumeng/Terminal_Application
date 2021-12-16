@@ -102,3 +102,17 @@ ruby main.rb
 ```
 
 - The app passed Rspec test, you can find test details in test-log folder.
+
+- You can use -flag in command line for more information.
+```console
+ruby main.rb -help
+=> You can use flag -info to get ruby versions and gems details
+For more infomation,please find README file
+
+ruby main.rb -info
+=> This terminal application needs ruby 3.0.2
+This app also need rubu gems : colorize, tty-color, tty-prompt, tty-spinner and tty-progressbar
+
+ruby main.rb -sdsfhh
+=> I can not find this argument, please find more information in README file
+```
