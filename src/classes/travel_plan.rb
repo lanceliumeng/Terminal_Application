@@ -1,5 +1,6 @@
 require_relative './itinerary.rb'
 require_relative './order.rb'
+require 'colorize'
 
 class TravelPlan
     attr_reader :name, :itinerary
@@ -35,7 +36,7 @@ class TravelPlan
     end
 
     def notify  
-        puts "Here is #{@name} :)"
+        puts "Here is #{@name},please type down the itinerary name you want to go :)".colorize(:light_yellow)
     end
 
     def print_itinerary
@@ -45,23 +46,26 @@ class TravelPlan
     def print_order
         if @order
             @order.display
+            # begin => for TTY processing bar
             bar = TTY::ProgressBar.new("Waiting ... [:bar]", total:30)
             30.times do
                 sleep(0.1)
                 bar.advance(1)
             end
-            puts "Your current order price is: $%.2f/pp in total" % total_order
+            # end => for TTY processing bar
+            puts ("Your current order price is: $%.2f/pp in total" % total_order).colorize(:light_yellow)
         else
             "Thanks for you choosing our app :)"
         end
         puts "============================================="
-        puts "Thanks for your order, have a lovely day :)"
+        puts "Thanks for your order,please contact our operator to confirm your travel date".colorize(:light_green)
+        puts "Have a lovely day :)".colorize(:light_green)
     end
 
 end
 
-name = "Your Current Travel Plan"
-travel_plans = {golf_tour:600,wine_tour:300}
-travel = TravelPlan.new(name,travel_plans)
-travel.notify
-travel.print_itinerary
+# name = "Your Current Travel Plan"
+# travel_plans = {golf_tour:600,wine_tour:300}
+# travel = TravelPlan.new(name,travel_plans)
+# travel.notify
+# travel.print_itinerary

@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Order 
     def initialize
         @order_items = Hash.new(0)  
@@ -14,9 +16,9 @@ class Order
     end
 
     def display
-        puts "Thanks for your order, please find the details below:"
+        puts "Thanks for your order, please find the details below:".colorize(:light_cyan)
         @order_items.each do |name,qty|
-            puts "Tour: #{name} " +  " "*(12 - name.length)+" ******** Qty: #{qty} "
+            puts ("Tour: #{name} " +  " "*(12 - name.length)+" ******** Qty: #{qty} ").colorize(:light_yellow)
         end
     end
 end

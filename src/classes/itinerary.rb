@@ -23,6 +23,7 @@ class Itinerary
     end
 
     def display_iti
+        puts 
         puts "Itinerary"
         puts "*********"
         @itinerary_items.each do |item|
