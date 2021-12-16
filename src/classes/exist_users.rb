@@ -1,3 +1,5 @@
+require 'colorize'
+
 class ExistUsers 
  
   @@users_details = {
@@ -7,26 +9,26 @@ class ExistUsers
 }
 
 def username_check 
-    puts "please type your username"
+    puts "please type your username".colorize(:light_green)
     input = gets.chomp.to_s
     if @@users_details.key? input 
-        puts "welcome back #{input}"
+        puts "welcome back #{input}".colorize(:light_blue)
        
         begin
-        puts "please enter your password"
+        puts "please enter your password".colorize(:light_green)
         answer = gets.chomp.to_i
             if answer != @@users_details[input]
                 raise "Invalid password"
             else 
-                puts "Log into System!"
+                puts "Log into System!".colorize(:light_green)
             end   
         rescue  => e
-            puts e.message 
+            puts e.message.colorize(:light_red)
             retry 
         end
 
     else
-        puts "Your username is not in our database, please type it again or register your username :)"
+        puts "Your username is not in our database, please register first :)".colorize(:blue)
         exit
     end
 

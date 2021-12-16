@@ -38,7 +38,7 @@ end
 
 # => itinerary lookup method 
 def brochure
-  File.foreach("../data-base/brochure.txt") do |each_line|
+  File.foreach("./data-base/brochure.txt") do |each_line|
       # each_line.strip!
       puts "#{each_line}".colorize(:light_yellow)
   end
@@ -68,7 +68,7 @@ end
 # => for new users register  
 def register
   begin
-      puts "Please type username"
+      puts "Please type username".colorize(:light_cyan)
       username_input = gets.chomp
       if username_input.empty? || username_input.match(/\s+/)
           raise "username cannot be empty or including blank space, please try again :)".colorize(:light_red)
@@ -79,7 +79,7 @@ def register
   end
 
   begin
-      puts "Please type password"
+      puts "Please type password".colorize(:light_cyan)
       password_input = gets.chomp
       if password_input.empty? || password_input.match(/\s+/)
           raise "password cannot be empty or including blank space, please try again :)".colorize(:light_red)
@@ -94,8 +94,8 @@ def register
   spinner.auto_spin
   sleep(3)
   spinner.stop("Thanks for your register 🥳")
-  puts "Your username is: #{username_input} 👏"
-  puts "Your password is: #{password_input} 👏"
+  puts "Your username is: #{username_input} 👏".colorize(:light_cyan)
+  puts "Your password is: #{password_input} 👏".colorize(:light_cyan)
 
 end
 
@@ -114,6 +114,7 @@ def options
       # => brochure method for display itineraries
       brochure
     when options[1]
+      puts  # => leave the blank for app structure more clean
       puts "Please choose the itinerary you like，and place your order".colorize(:light_cyan)
       # Ojbect for => TravelPlan class
       itinerary_intro = {

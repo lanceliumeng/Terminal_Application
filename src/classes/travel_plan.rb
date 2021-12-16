@@ -36,7 +36,8 @@ class TravelPlan
     end
 
     def notify  
-        puts "Here is #{@name},please type down the itinerary name you want to go :)".colorize(:light_yellow)
+        puts #blank space
+        puts "Here is #{@name},please type down the itinerary name you want to go".colorize(:light_yellow)
     end
 
     def print_itinerary
@@ -53,13 +54,15 @@ class TravelPlan
                 bar.advance(1)
             end
             # end => for TTY processing bar
-            puts ("Your current order price is: $%.2f/pp in total" % total_order).colorize(:light_yellow)
+            puts ("Your current order price is: $%.2f/pp in total 🥳🥳" % total_order).colorize(:light_yellow)
         else
             "Thanks for you choosing our app :)"
         end
         puts "============================================="
         puts "Thanks for your order,please contact our operator to confirm your travel date".colorize(:light_green)
+        puts # => blank space
         puts "Have a lovely day :)".colorize(:light_green)
+        exit
     end
 
 end

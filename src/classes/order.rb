@@ -16,9 +16,10 @@ class Order
     end
 
     def display
+        puts #blank space
         puts "Thanks for your order, please find the details below:".colorize(:light_cyan)
         @order_items.each do |name,qty|
-            puts ("Tour: #{name} " +  " "*(12 - name.length)+" ******** Qty: #{qty} ").colorize(:light_yellow)
+            puts "Tour: #{name} " +  " "*(18 - name.length)+" ******** Qty: #{qty} "
         end
     end
 end
