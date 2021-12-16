@@ -58,7 +58,7 @@ end
 
 
 
-# back-up codes( can have different way to achieve requirements,but not DRY)
+# back-up codes(can have different way to achieve requirements,but not DRY)
  #  # valid || invalid username
   # puts "Please enter your username:".colorize(:light_yellow)
   # input_user = gets.chomp
